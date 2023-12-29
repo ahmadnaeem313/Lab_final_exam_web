@@ -10,16 +10,22 @@ const categoriesSlice = createSlice({
   name: 'categories',
   initialState,
   reducers: {
-    setCategories: (state, action) => {
-      state.categories = action.payload;
-      state.status = 'succeeded';
+    updateCategories: (state, action) => {
+      return {
+        ...state,
+        categories: action.payload,
+        status: 'succeeded',
+      };
     },
-    setError: (state, action) => {
-      state.status = 'failed';
-      state.error = action.payload;
+    updateError: (state, action) => {
+      return {
+        ...state,
+        status: 'failed',
+        error: action.payload,
+      };
     },
   },
 });
 
-export const { setCategories, setError } = categoriesSlice.actions;
+export const { updateCategories, updateError } = categoriesSlice.actions;
 export default categoriesSlice.reducer;

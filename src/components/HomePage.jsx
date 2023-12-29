@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setCategories, setError } from '../Store/Slices/slice';
+import { updateCategories, updateError } from '../Store/Slices/slice';
+
 import { Link } from 'react-router-dom';
 
 function HomePage() {
@@ -16,10 +17,10 @@ function HomePage() {
         return response.json();
       })
       .then((data) => {
-        dispatch(setCategories(data));
+        dispatch(updateCategories(data));
       })
       .catch((error) => {
-        dispatch(setError(error.message));
+        dispatch(updateError(error.message));
       });
   }, [dispatch]);
 

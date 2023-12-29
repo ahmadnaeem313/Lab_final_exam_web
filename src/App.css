@@ -15,18 +15,18 @@
 
 
 .App-header {
-  background-color: #282c34;
+  background-color: #174196;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(169, 14, 14);
 }
 
 .App-link {
-  color: #61dafb;
+  color: #003d4e;
 }
 
 @keyframes App-logo-spin {
@@ -42,9 +42,9 @@
 /* CSS styles for HomePage and DetailsPage */
 
 .home-container {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 200px;
 }
 
 .category-list {
@@ -53,7 +53,7 @@
 }
 
 .category-item {
-  border: 1px solid #ccc;
+  border: 2px solid #0e0e0e;
   border-radius: 8px;
   margin-bottom: 10px;
   padding: 10px;
@@ -62,11 +62,11 @@
 
 .category-link {
   text-decoration: none;
-  color: #333;
+  color: #760404;
 }
 
 .category-link:hover {
-  opacity: 0.8;
+  opacity: 0.10;
 }
 
 .details-container {

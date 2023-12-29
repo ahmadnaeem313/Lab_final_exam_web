@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { setCategories, setError } from '../Store/Slices/slice';
+import { updateCategories, updateError } from '../Store/Slices/slice';
 
 function DetailsPage() {
   const { categoryId } = useParams();
@@ -19,22 +19,22 @@ function DetailsPage() {
         return response.json();
       })
       .then((data) => {
-        dispatch(setCategories(data));
+        dispatch(updateCategories(data));
       })
       .catch((error) => {
-        dispatch(setError(error.message));
+        dispatch(updateCategories(error.message));
       });
   }, [dispatch]);
 
   if (!category) {
-    return <div className="loading">Loading...</div>;
+    return <div className="loading">Load...</div>;
   }
 
   return (
     <div className="details-container">
       <h2 className="category-name">{category.name}</h2>
       <p className="category-details">{category.details}</p>
-      <Link className="back-link" to="/">Back</Link>
+      <Link className="back-link" to="/">Back-To</Link>
     </div>
   );
 }
